@@ -1,11 +1,9 @@
 <template>
     <div class="list">
         <ListItem 
-            v-for="(todo, index) in todos"
-            v-bind:key="todo.index"
-            @deleteTodo="todos.splice(index, 1)">
-            {{ todo }}
-        </ListItem>
+            v-for="(thanksMsg, index) in thanksMsgs"
+            v-bind:key="index"
+            :thanksMsg=thanksMsg />
     </div>
 </template>
 
@@ -16,11 +14,8 @@ export default {
     components: {
         ListItem,
     },
-    props: ['todos'],
+    props: ['thanksMsgs'],
     methods: {
-        deleteTodo(index) {
-            this.$emit('deleted', index);
-        }
     },
 }
 </script>

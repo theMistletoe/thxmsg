@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <Form @todoAdded="newTodo" />
-    <List :todos="todos" />
+    <Form @thanksMsgAdded="newThanksMsg" />
+    <List :thanksMsgs="thanksMsgs" />
   </div>
 </template>
 
@@ -16,12 +16,18 @@
     },
     data() {
       return {
-        todos: ['TASK1', 'TASK2', 'TASK3'], // init tasks
+        thanksMsgs: [
+          {
+            to:'bob',
+            msg: 'thanks for your contribution!',
+            from:'Alice',
+          }
+        ], // init thanks msg
       }
     },
     methods: {
-      newTodo (todo) {
-        this.todos.push(todo);
+      newThanksMsg (thanksMsg) {
+        this.thanksMsgs.push(thanksMsg);
       }
     }
   }
