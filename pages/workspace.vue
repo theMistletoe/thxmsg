@@ -1,5 +1,8 @@
 <template>
-  <h1>Top Page</h1>
+  <div class="page">
+    <Form @thanksMsgAdded="newThanksMsg" />
+    <List :thanksMsgs="thanksMsgs" />
+  </div>
 </template>
 
 <script>
@@ -13,17 +16,15 @@
     },
     data() {
       return {
-        thanksMsgs: [
-          {
-            to:'bob',
-            msg: 'thanks for your contribution!',
-            from:'Alice',
-          }
-        ], // init thanks msg
+        thanksMsgs: [{
+          to: 'bob',
+          msg: 'thanks for your contribution!',
+          from: 'Alice',
+        }], // init thanks msg
       }
     },
     methods: {
-      newThanksMsg (thanksMsg) {
+      newThanksMsg(thanksMsg) {
         this.thanksMsgs.push(thanksMsg);
       }
     }
