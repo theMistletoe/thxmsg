@@ -1,35 +1,22 @@
 <template>
-  <h1>Top Page</h1>
+  <div class="form-workspaceID">
+    <label>workspaceID</label>
+    <input type="text" v-model="workspaceID" />
+    <nuxt-link :to="`/workspace?workspaceID=${workspaceID}`">
+      Go to Next
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
-  import List from '~/components/List.vue'
-  import Form from '~/components/Form.vue'
-
-  export default {
-    components: {
-      List,
-      Form,
-    },
-    data() {
-      return {
-        thanksMsgs: [
-          {
-            to:'bob',
-            msg: 'thanks for your contribution!',
-            from:'Alice',
-          }
-        ], // init thanks msg
-      }
-    },
-    methods: {
-      newThanksMsg (thanksMsg) {
-        this.thanksMsgs.push(thanksMsg);
-      }
-    }
-  }
-
+export default {
+  data() {
+    return {
+      workspaceID: ""
+    };
+  },
+  methods: {}
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
