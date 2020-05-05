@@ -21,7 +21,7 @@ export default {
 
     const fetchedThanksMsgs = [];
     db.collection("workspaces")
-      .doc("127635123") // TODO: chamge to this.$route.query.workspaceID
+      .doc(this.$route.query.workspaceID)
       .collection("thanksMsgs")
       .get()
       .then(querySnapshot => {
@@ -32,38 +32,27 @@ export default {
       });
 
     this.thanksMsgs = fetchedThanksMsgs;
-
-    // const test = {
-    //   to: "bob",
-    //   msg: "thanks for your contribution!",
-    //   from: "Alice"
-    // };
-
-    // db.collection("workspaces")
-    //   .doc("127635123")
-    //   .collection("thanksMsgs")
-    //   .add(test)
-    //   .then(ref => {
-    //     console.log(ref);
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
   },
   data() {
     return {
-      thanksMsgs: [
-        // {
-        //   to: "bob",
-        //   msg: "thanks for your contribution!",
-        //   from: "Alice"
-        // }
-      ] // init thanks msg
+      thanksMsgs: []
     };
   },
   methods: {
     newThanksMsg(thanksMsg) {
-      this.thanksMsgs.push(thanksMsg);
+      const db = firebase.firestore();
+
+      db.collection("workspaces")
+        .doc(this.$route.query.workspaceID)
+        .collection("thanksMsgs")
+        .add(thanksMsg)
+        .then(ref => {
+          console.log(ref);
+          this.thanksMsgs.push(thanksMsg);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };
