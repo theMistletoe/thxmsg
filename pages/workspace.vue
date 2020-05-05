@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <h1>WorkspaceID:{{ $route.query.workspaceID }}</h1>
     <Form @thanksMsgAdded="newThanksMsg" />
     <List :thanksMsgs="thanksMsgs" />
   </div>
