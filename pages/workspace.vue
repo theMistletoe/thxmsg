@@ -8,6 +8,7 @@
 <script>
 import List from "~/components/List.vue";
 import Form from "~/components/Form.vue";
+import firebase from "~/firebase";
 
 export default {
   components: {
@@ -16,6 +17,31 @@ export default {
   },
   mounted: function() {
     console.log(this.$route.query.workspaceID);
+    const db = firebase.firestore();
+    db.collection("workspaces")
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          console.log(`${doc.id} => ${doc.data()}`);
+        });
+      });
+
+    const test = {
+      to: "bob",
+      msg: "thanks for your contribution!",
+      from: "Alice"
+    };
+
+    db.collection("workspaces")
+      .doc("127635123")
+      .collection("thanksMsgs")
+      .add(test)
+      .then(ref => {
+        console.log(ref);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   },
   data() {
     return {
