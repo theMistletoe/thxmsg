@@ -2,6 +2,8 @@
   <div class="page">
     <h1>WorkspaceID:{{ $route.query.workspaceID }}</h1>
     <Form @thanksMsgAdded="newThanksMsg" />
+    <hr />
+    <h2>感謝ズ</h2>
     <List :thanksMsgs="thanksMsgs" />
   </div>
 </template>
