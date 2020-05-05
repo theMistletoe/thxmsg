@@ -17,6 +17,12 @@ export default {
   },
   mounted: function() {
     console.log(this.$route.query.workspaceID);
+    if (!this.$route.query.workspaceID) {
+      alert("set workspaceID from Top Page!");
+      this.$router.push("/");
+      return;
+    }
+
     const db = firebase.firestore();
 
     const fetchedThanksMsgs = [];
