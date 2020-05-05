@@ -18,39 +18,46 @@ export default {
   mounted: function() {
     console.log(this.$route.query.workspaceID);
     const db = firebase.firestore();
+
+    const fetchedThanksMsgs = [];
     db.collection("workspaces")
+      .doc("127635123") // TODO: chamge to this.$route.query.workspaceID
+      .collection("thanksMsgs")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          console.log(`${doc.id} => ${doc.data()}`);
+          console.log(doc.data());
+          fetchedThanksMsgs.push(doc.data());
         });
       });
 
-    const test = {
-      to: "bob",
-      msg: "thanks for your contribution!",
-      from: "Alice"
-    };
+    this.thanksMsgs = fetchedThanksMsgs;
 
-    db.collection("workspaces")
-      .doc("127635123")
-      .collection("thanksMsgs")
-      .add(test)
-      .then(ref => {
-        console.log(ref);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    // const test = {
+    //   to: "bob",
+    //   msg: "thanks for your contribution!",
+    //   from: "Alice"
+    // };
+
+    // db.collection("workspaces")
+    //   .doc("127635123")
+    //   .collection("thanksMsgs")
+    //   .add(test)
+    //   .then(ref => {
+    //     console.log(ref);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
   },
   data() {
     return {
       thanksMsgs: [
-        {
-          to: "bob",
-          msg: "thanks for your contribution!",
-          from: "Alice"
-        }
+        // {
+        //   to: "bob",
+        //   msg: "thanks for your contribution!",
+        //   from: "Alice"
+        // }
       ] // init thanks msg
     };
   },
