@@ -1,6 +1,8 @@
 <template>
-  <div class="page">
-    <h1>WorkspaceID:{{ $route.query.workspaceID }}</h1>
+  <main class="page">
+    <header>
+      <h1>WorkspaceID:{{ $route.query.workspaceID }}</h1>
+    </header>
     <Form @thanksMsgAdded="newThanksMsg" />
     <hr />
     <h2>感謝ズ</h2>
@@ -9,7 +11,7 @@
       @2019 <a href="https://github.com/theMistletoe">theMistletoe</a> All Right
       Reserved.
     </footer>
-  </div>
+  </main>
 </template>
 
 <script>
