@@ -13,7 +13,7 @@
         <label>To</label>
         <input type="text" v-model="to" />
       </div>
-      <button type="submit">Add</button>
+      <button type="submit">Send</button>
     </form>
   </div>
 </template>

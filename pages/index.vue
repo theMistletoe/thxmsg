@@ -21,6 +21,10 @@
         </div>
       </aside>
     </section>
+    <footer>
+      @2019 <a href="https://github.com/theMistletoe">theMistletoe</a> All Right
+      Reserved.
+    </footer>
   </main>
 </template>
 
