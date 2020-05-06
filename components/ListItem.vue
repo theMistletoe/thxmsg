@@ -6,7 +6,7 @@
         <div class="list-item-msg">
           {{ thanksMsg.msg }}
         </div>
-        <div class="list-item-from">from: {{ thanksMsg.from }}</div>
+        <div class="list-item-from">From: {{ thanksMsg.from }}</div>
       </aside>
     </section>
   </article>
