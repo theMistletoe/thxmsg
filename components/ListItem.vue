@@ -3,9 +3,7 @@
     <section>
       <aside>
         <div class="list-item-to">To: {{ thanksMsg.to }}</div>
-        <div class="list-item-msg">
-          {{ thanksMsg.msg }}
-        </div>
+        <div class="list-item-msg">{{ thanksMsg.msg }}</div>
         <div class="list-item-from">From: {{ thanksMsg.from }}</div>
       </aside>
     </section>
@@ -21,6 +19,8 @@ export default {
 <style lang="css" scoped>
 .list-item-msg {
   text-align: center;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .list-item-from {

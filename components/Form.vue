@@ -7,7 +7,7 @@
       </div>
       <div class="form-msg">
         <label>Write Message for Thanks!</label>
-        <input type="textarea" v-model="msg" />
+        <textarea type="textarea" v-model="msg" />
       </div>
       <div class="form-to">
         <label>To</label>
