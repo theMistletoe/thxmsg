@@ -1,6 +1,17 @@
 <template>
   <div class="form">
     <form @submit.prevent="addThanksMsg">
+      <div class="form-card-tyoe">
+        <select v-model="cardtype">
+          <option disabled value="">Please select one</option>
+          <option>GoodJob!</option>
+          <option>ありがとう!</option>
+          <option>素晴らしい!</option>
+          <option>幸せです!</option>
+          <option>おめでとう!</option>
+        </select>
+        <span>Selected: {{ cardtype }}</span>
+      </div>
       <div class="form-from">
         <label>From</label>
         <input type="text" v-model="from" />
@@ -24,7 +35,8 @@ export default {
     return {
       from: "",
       msg: "",
-      to: ""
+      to: "",
+      cardtype: ""
     };
   },
   methods: {
@@ -32,7 +44,8 @@ export default {
       const newThanksMsg = {
         to: this.to,
         msg: this.msg,
-        from: this.from
+        from: this.from,
+        cardtype: this.cardtype
       };
 
       this.$emit("thanksMsgAdded", newThanksMsg);
@@ -40,6 +53,7 @@ export default {
       this.from = "";
       this.msg = "";
       this.to = "";
+      this.cardtype = "";
     }
   }
 };
