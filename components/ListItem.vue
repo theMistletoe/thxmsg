@@ -15,24 +15,33 @@ export default {
   data() {
     return {
       classGrey: "-grey",
+      classYellow: "-yellow",
       classRed: "-red",
       classOrange: "-orange",
-      classGreen: "-green",
+      classViolet: "-violet",
       classBlue: "-blue",
+      classGreen: "-green",
+      classPink: "-pink",
       classPurple: "-purple"
     };
   },
   methods: {
     bgColor: function(cardtype) {
-      if (cardtype === "素晴らしい!") {
+      if (cardtype === "ありがとう!") {
+        return this.classYellow;
+      } else if (cardtype === "嬉しかったよ!") {
         return this.classRed;
-      } else if (cardtype === "GoodJob!") {
+      } else if (cardtype === "ほんとにありがとう!") {
         return this.classOrange;
-      } else if (cardtype === "ありがとう!") {
-        return this.classGreen;
-      } else if (cardtype === "幸せです!") {
+      } else if (cardtype === "よくやった!") {
+        return this.classViolet;
+      } else if (cardtype === "すごいね!") {
         return this.classBlue;
       } else if (cardtype === "おめでとう!") {
+        return this.classGreen;
+      } else if (cardtype === "いい仕事したね!") {
+        return this.classPink;
+      } else if (cardtype === "誇りに思う!") {
         return this.classPurple;
       } else {
         return this.classGrey;
@@ -83,20 +92,35 @@ export default {
   margin-bottom: 5px;
 }
 
+.-yellow {
+  background-color: rgb(255, 196, 0);
+}
+
 .-red {
-  background-color: rgb(193, 5, 5);
+  background-color: crimson;
 }
 
 .-orange {
   background-color: darkorange;
 }
-.-green {
-  background-color: forestgreen;
+
+.-violet {
+  background-color: rgb(156, 81, 226);
 }
+
 .-blue {
-  background-color: dodgerblue;
+  background-color: rgb(63, 165, 255);
 }
+
+.-green {
+  background-color: rgb(51, 154, 51);
+}
+
+.-pink {
+  background-color: hotpink;
+}
+
 .-purple {
-  background-color: darkorchid;
+  background-color: rgb(152, 72, 136);
 }
 </style>

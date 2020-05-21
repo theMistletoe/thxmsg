@@ -5,10 +5,13 @@
         <label>Card Type:</label>
         <select v-model="cardtype">
           <option selected>ありがとう!</option>
-          <option>GoodJob!</option>
-          <option>素晴らしい!</option>
-          <option>幸せです!</option>
+          <option>嬉しかったよ!</option>
+          <option>ほんとにありがとう!</option>
+          <option>よくやった!</option>
+          <option>すごいね!</option>
           <option>おめでとう!</option>
+          <option>いい仕事したね!</option>
+          <option>誇りに思う!</option>
         </select>
       </div>
       <div class="form-from">
