@@ -1,7 +1,7 @@
 {
-  "name": "todos-sample",
+  "name": "thxmsgs",
   "version": "1.0.0",
-  "description": "sample todos",
+  "description": "Let's express our gratitude!",
   "author": "theMistletoe",
   "private": true,
   "scripts": {
