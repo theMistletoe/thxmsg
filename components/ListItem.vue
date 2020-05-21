@@ -17,10 +17,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.list-item {
+  display: inline-flex;
+}
+
 .list-item-msg {
   text-align: center;
   white-space: pre-wrap;
   word-wrap: break-word;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .list-item-from {
