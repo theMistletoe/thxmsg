@@ -8,7 +8,7 @@
     <h2>感謝ズ</h2>
     <List :thanksMsgs="thanksMsgs" />
     <footer>
-      @2019 <a href="https://github.com/theMistletoe">theMistletoe</a> All Right
+      @2020 <a href="https://github.com/theMistletoe">theMistletoe</a> All Right
       Reserved.
     </footer>
   </main>
