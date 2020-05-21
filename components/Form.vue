@@ -58,4 +58,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.form-card-type {
+  margin-bottom: 5px;
+}
+
+.form-from {
+  margin-bottom: 5px;
+}
+
+.form-msg {
+  margin-bottom: 5px;
+}
+</style>
