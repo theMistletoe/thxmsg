@@ -1,10 +1,18 @@
 <template>
-  <h1>WorkspaceID:{{ workspaceID }}</h1>
+  <div>
+    <h2>WorkspaceID:{{ workspaceID }}</h2>
+    <button type="button" @click="onCopy">URL Copy!</button>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["workspaceID"]
+  props: ["workspaceID"],
+  methods: {
+    onCopy() {
+      this.$copyText(location.href);
+    }
+  }
 };
 </script>
 
