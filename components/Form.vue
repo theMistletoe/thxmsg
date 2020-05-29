@@ -73,4 +73,10 @@ export default {
 .form-msg {
   margin-bottom: 5px;
 }
+
+.form-msg textarea {
+  width: 400px;
+  max-width: -webkit-fill-available;
+  height: 200px;
+}
 </style>
