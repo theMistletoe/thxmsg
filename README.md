@@ -23,6 +23,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ### Ref links
 
+https://note.com/aliz/n/nda7438249ca8
 https://firebase.google.com/docs/firestore/quickstart?authuser=0
 https://firebase.google.com/docs/web/setup?authuser=0#config-object
 https://medium.com/@astatsuya/cloud-firestore%E3%81%A8vue-js%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%99%E3%83%BC%E3%82%B9%E9%80%9A%E4%BF%A1%E3%82%92%E8%A1%8C%E3%81%86-1195352c543f
