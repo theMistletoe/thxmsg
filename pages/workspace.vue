@@ -1,7 +1,7 @@
 <template>
   <main class="page">
     <header>
-      <h1>WorkspaceID:{{ $route.query.workspaceID }}</h1>
+      <WorkspaceID :workspaceID="$route.query.workspaceID" />
     </header>
     <Form @thanksMsgAdded="newThanksMsg" />
     <hr />
@@ -13,12 +13,14 @@
 <script>
 import List from "~/components/List.vue";
 import Form from "~/components/Form.vue";
+import WorkspaceID from "~/components/WorkspaceID.vue";
 import firebase from "~/firebase";
 
 export default {
   components: {
     List,
-    Form
+    Form,
+    WorkspaceID
   },
   mounted: function() {
     console.log(this.$route.query.workspaceID);
