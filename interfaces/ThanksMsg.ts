@@ -1,5 +1,7 @@
+import { CardType } from "./CardType";
+
 export interface ThanksMsg {
-  cardtype: string;
+  cardtype: CardType;
   to: string;
   msg: string;
   from: string;

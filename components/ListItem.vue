@@ -18,6 +18,7 @@ import {
   computed
 } from "@vue/composition-api";
 import { ThanksMsg } from "@/interfaces/ThanksMsg";
+import { CardType } from "../interfaces/CardType";
 
 type Props = {
   thanksMsg: ThanksMsg;
@@ -31,7 +32,7 @@ export default defineComponent({
     }
   },
   setup(props: Props, context: SetupContext) {
-    const cardtype = props.thanksMsg.cardtype;
+    const cardtype: CardType = props.thanksMsg.cardtype;
 
     const cardColor = computed(() => {
       if (cardtype === "ありがとう!") {
