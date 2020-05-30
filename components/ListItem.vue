@@ -1,6 +1,6 @@
 <template>
   <div class="list-item">
-    <div class="list-item-cardtype" :class="bgColor(thanksMsg.cardtype)">
+    <div class="list-item-cardtype" :class="cardColor">
       {{ thanksMsg.cardtype }}
     </div>
     <div class="list-item-to">To: {{ thanksMsg.to }}</div>
@@ -9,46 +9,57 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["thanksMsg"],
-  data() {
-    return {
-      classGrey: "-grey",
-      classYellow: "-yellow",
-      classRed: "-red",
-      classOrange: "-orange",
-      classViolet: "-violet",
-      classBlue: "-blue",
-      classGreen: "-green",
-      classPink: "-pink",
-      classPurple: "-purple"
-    };
-  },
-  methods: {
-    bgColor: function(cardtype) {
-      if (cardtype === "ありがとう!") {
-        return this.classYellow;
-      } else if (cardtype === "嬉しかったよ!") {
-        return this.classRed;
-      } else if (cardtype === "ほんとにありがとう!") {
-        return this.classOrange;
-      } else if (cardtype === "よくやった!") {
-        return this.classViolet;
-      } else if (cardtype === "すごいね!") {
-        return this.classBlue;
-      } else if (cardtype === "おめでとう!") {
-        return this.classGreen;
-      } else if (cardtype === "いい仕事したね!") {
-        return this.classPink;
-      } else if (cardtype === "誇りに思う!") {
-        return this.classPurple;
-      } else {
-        return this.classGrey;
-      }
-    }
-  }
+<script lang="ts">
+import {
+  defineComponent,
+  SetupContext,
+  PropType,
+  onMounted,
+  computed
+} from "@vue/composition-api";
+import { ThanksMsg } from "@/interfaces/ThanksMsg";
+
+type Props = {
+  thanksMsg: ThanksMsg;
 };
+
+export default defineComponent({
+  props: {
+    thanksMsg: {
+      type: Object as PropType<ThanksMsg>,
+      required: true
+    }
+  },
+  setup(props: Props, context: SetupContext) {
+    const cardtype = props.thanksMsg.cardtype;
+
+    const cardColor = computed(() => {
+      if (cardtype === "ありがとう!") {
+        return "-yellow";
+      } else if (cardtype === "嬉しかったよ!") {
+        return "-red";
+      } else if (cardtype === "ほんとにありがとう!") {
+        return "-orange";
+      } else if (cardtype === "よくやった!") {
+        return "-violet";
+      } else if (cardtype === "すごいね!") {
+        return "-blue";
+      } else if (cardtype === "おめでとう!") {
+        return "-green";
+      } else if (cardtype === "いい仕事したね!") {
+        return "-pink";
+      } else if (cardtype === "誇りに思う!") {
+        return "-purple";
+      } else {
+        return "-grey";
+      }
+    });
+
+    return {
+      cardColor
+    };
+  }
+});
 </script>
 
 <style lang="css" scoped>

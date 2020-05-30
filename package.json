@@ -5,13 +5,15 @@
   "author": "theMistletoe",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^0.4.8",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@vue/composition-api": "^0.5.0",
     "firebase": "^7.14.2",
     "nuxt": "^2.0.0",
     "nuxt-clipboard2": "^0.2.1",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.9.6",
+    "@nuxt/typescript-build": "^1.0.1",
     "core-js": "3"
   }
 }
