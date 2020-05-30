@@ -8,7 +8,24 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "generate": "nuxt-ts generate",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@babel/runtime-corejs2)"
+    ]
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.8",
@@ -22,6 +39,11 @@
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.9.6",
     "@nuxt/typescript-build": "^1.0.1",
-    "core-js": "3"
+    "core-js": "3",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0",
+    "ts-jest": "^25.0.0"
   }
 }
