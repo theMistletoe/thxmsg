@@ -3,7 +3,7 @@
     <form @submit.prevent="addThanksMsg">
       <div class="form-card-type">
         <label>Card Type:</label>
-        <select v-model="cardtype">
+        <select v-model="state.cardtype">
           <option selected>ありがとう!</option>
           <option>嬉しかったよ!</option>
           <option>ほんとにありがとう!</option>
@@ -16,49 +16,59 @@
       </div>
       <div class="form-from">
         <label>From</label>
-        <input type="text" v-model="from" />
+        <input type="text" v-model="state.from" />
       </div>
       <div class="form-msg">
         <label>Write Message for Thanks!</label>
-        <textarea type="textarea" v-model="msg" />
+        <textarea type="textarea" v-model="state.msg" />
       </div>
       <div class="form-to">
         <label>To</label>
-        <input type="text" v-model="to" />
+        <input type="text" v-model="state.to" />
       </div>
       <button type="submit">Send</button>
     </form>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      from: "",
-      msg: "",
-      to: "",
-      cardtype: "ありがとう!"
-    };
-  },
-  methods: {
-    addThanksMsg() {
-      const newThanksMsg = {
-        to: this.to,
-        msg: this.msg,
-        from: this.from,
-        cardtype: this.cardtype
+<script lang="ts">
+import { defineComponent, SetupContext, reactive } from "@vue/composition-api";
+import { ThanksMsg } from "@/interfaces/ThanksMsg";
+import { CardType } from "../interfaces/CardType";
+
+type Props = {};
+
+export default defineComponent({
+  setup(props: Props, context: SetupContext) {
+    const state = reactive({
+      from: "" as string,
+      msg: "" as string,
+      to: "" as string,
+      cardtype: "ありがとう!" as CardType
+    });
+
+    const addThanksMsg = () => {
+      const newThanksMsg: ThanksMsg = {
+        to: state.to,
+        msg: state.msg,
+        from: state.from,
+        cardtype: state.cardtype
       };
 
-      this.$emit("thanksMsgAdded", newThanksMsg);
+      context.emit("thanksMsgAdded", newThanksMsg);
 
-      this.from = "";
-      this.msg = "";
-      this.to = "";
-      this.cardtype = "ありがとう!";
-    }
+      state.from = "";
+      state.msg = "";
+      state.to = "";
+      state.cardtype = "ありがとう!";
+    };
+
+    return {
+      state,
+      addThanksMsg
+    };
   }
-};
+});
 </script>
 
 <style lang="css" scoped>
