@@ -8,16 +8,26 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, PropType } from "@vue/composition-api";
 import ListItem from "~/components/ListItem.vue";
+import { ThanksMsg } from "../interfaces/ThanksMsg";
 
-export default {
+type Props = {
+  thanksMsgs: ThanksMsg[];
+};
+
+export default defineComponent({
   components: {
     ListItem
   },
-  props: ["thanksMsgs"],
-  methods: {}
-};
+  props: {
+    thanksMsgs: {
+      type: Array as PropType<ThanksMsg[]>,
+      required: true
+    }
+  }
+});
 </script>
 
 <style lang="css" scoped>
