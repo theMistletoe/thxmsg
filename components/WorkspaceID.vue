@@ -1,12 +1,13 @@
 <template>
   <div>
     <h2>WorkspaceID:{{ workspaceID }}</h2>
-    <button type="button" @click="onCopy">URL Copy!</button>
+    <a type="button" @click="onCopy">Copy URL!</a>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, SetupContext } from "@vue/composition-api";
+import { CopyURL } from "@/composition/CopyURL";
 
 type Props = {
   workspaceID: string;
@@ -20,20 +21,12 @@ export default defineComponent({
     }
   },
   setup(props: Props, context: SetupContext) {
-    const onCopy = () => {
-      navigator.clipboard
-        .writeText(location.href)
-        .then(() => {
-          console.log("テキストコピー完了");
-        })
-        .catch(e => {
-          console.error(e);
-        });
-    };
-
+    const onCopy = CopyURL();
     return { onCopy };
   }
 });
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+a:active {color:#ffff00;}
+</style>
