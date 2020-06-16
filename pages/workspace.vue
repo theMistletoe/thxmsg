@@ -31,19 +31,19 @@ export default {
 
     const db = firebase.firestore();
 
-    const fetchedThanksMsgs = [];
+    let fetchedThanksMsgs = [];
     db.collection("workspaces")
       .doc(this.$route.query.workspaceID)
       .collection("thanksMsgs")
-      .get()
-      .then(querySnapshot => {
+      .orderBy("createdAt")
+      .onSnapshot(querySnapshot => {
+        fetchedThanksMsgs = [];
         querySnapshot.forEach(doc => {
           console.log(doc.data());
           fetchedThanksMsgs.push(doc.data());
         });
+        this.thanksMsgs = fetchedThanksMsgs;
       });
-
-    this.thanksMsgs = fetchedThanksMsgs;
   },
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
         .add(thanksMsg)
         .then(ref => {
           console.log(ref);
-          this.thanksMsgs.push(thanksMsg);
+          // this.thanksMsgs.push(thanksMsg);
         })
         .catch(function(error) {
           console.log(error);

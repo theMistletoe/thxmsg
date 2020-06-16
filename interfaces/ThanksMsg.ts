@@ -5,4 +5,5 @@ export interface ThanksMsg {
   to: string;
   msg: string;
   from: string;
+  createdAt: Date;
 }

@@ -48,11 +48,13 @@ export default defineComponent({
     });
 
     const addThanksMsg = () => {
+      const now = new Date();
       const newThanksMsg: ThanksMsg = {
         to: state.to,
         msg: state.msg,
         from: state.from,
-        cardtype: state.cardtype
+        cardtype: state.cardtype,
+        createdAt: now
       };
 
       context.emit("thanksMsgAdded", newThanksMsg);

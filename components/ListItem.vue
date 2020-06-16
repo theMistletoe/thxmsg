@@ -1,6 +1,6 @@
 <template>
   <div class="list-item">
-    <div class="list-item-cardtype" :class="cardColor">
+    <div class="list-item-cardtype" :class="state.cardColor">
       {{ thanksMsg.cardtype }}
     </div>
     <div class="list-item-to">To: {{ thanksMsg.to }}</div>
@@ -15,7 +15,7 @@ import {
   SetupContext,
   PropType,
   onMounted,
-  computed
+  reactive
 } from "@vue/composition-api";
 import { ThanksMsg } from "@/interfaces/ThanksMsg";
 import { CardType } from "../interfaces/CardType";
@@ -34,30 +34,32 @@ export default defineComponent({
   setup(props: Props, context: SetupContext) {
     const cardtype: CardType = props.thanksMsg.cardtype;
 
-    const cardColor = computed(() => {
-      if (cardtype === "ありがとう!") {
-        return "-yellow";
-      } else if (cardtype === "嬉しかったよ!") {
-        return "-red";
-      } else if (cardtype === "ほんとにありがとう!") {
-        return "-orange";
-      } else if (cardtype === "よくやった!") {
-        return "-violet";
-      } else if (cardtype === "すごいね!") {
-        return "-blue";
-      } else if (cardtype === "おめでとう!") {
-        return "-green";
-      } else if (cardtype === "いい仕事したね!") {
-        return "-pink";
-      } else if (cardtype === "誇りに思う!") {
-        return "-purple";
-      } else {
-        return "-grey";
-      }
+    const state = reactive<{ cardColor: string }>({
+      cardColor: "-grey"
     });
 
+    if (cardtype === "ありがとう!") {
+      state.cardColor = "-yellow";
+    } else if (cardtype === "嬉しかったよ!") {
+      state.cardColor = "-red";
+    } else if (cardtype === "ほんとにありがとう!") {
+      state.cardColor = "-orange";
+    } else if (cardtype === "よくやった!") {
+      state.cardColor = "-violet";
+    } else if (cardtype === "すごいね!") {
+      state.cardColor = "-blue";
+    } else if (cardtype === "おめでとう!") {
+      state.cardColor = "-green";
+    } else if (cardtype === "いい仕事したね!") {
+      state.cardColor = "-pink";
+    } else if (cardtype === "誇りに思う!") {
+      state.cardColor = "-purple";
+    } else {
+      state.cardColor = "-grey";
+    }
+
     return {
-      cardColor
+      state
     };
   }
 });
