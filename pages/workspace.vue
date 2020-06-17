@@ -5,7 +5,7 @@
     </header>
     <Form @thanksMsgAdded="newThanksMsg" />
     <hr />
-    <h2>感謝ズ</h2>
+    <h2>感謝の言葉たち</h2>
     <List :thanksMsgs="thanksMsgs" />
   </main>
 </template>
