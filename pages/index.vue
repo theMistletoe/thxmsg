@@ -48,6 +48,6 @@ export default {
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-justify-content: center;
+  justify-content: center;
 }
 </style>
