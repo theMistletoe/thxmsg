@@ -56,9 +56,4 @@ html {
   color: #fff;
   background-color: #35495e;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-}
 </style>
