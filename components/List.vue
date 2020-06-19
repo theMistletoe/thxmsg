@@ -1,11 +1,11 @@
 <template>
-  <div class="list">
+  <transition-group tag="ul" class="list">
     <ListItem
       v-for="(thanksMsg, index) in thanksMsgs"
       v-bind:key="index"
       :thanksMsg="thanksMsg"
     />
-  </div>
+  </transition-group>
 </template>
 
 <script lang="ts">
@@ -48,5 +48,14 @@ export default defineComponent({
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;
+}
+
+.v-enter-active {
+  transition: opacity 1s, transform 1s;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>

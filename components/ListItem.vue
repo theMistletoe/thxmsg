@@ -1,12 +1,12 @@
 <template>
-  <div class="list-item">
+  <li class="list-item">
     <div class="list-item-cardtype" :class="state.cardColor">
       {{ thanksMsg.cardtype }}
     </div>
     <div class="list-item-to">To: {{ thanksMsg.to }}</div>
     <div class="list-item-msg">{{ thanksMsg.msg }}</div>
     <div class="list-item-from">From: {{ thanksMsg.from }}</div>
-  </div>
+  </li>
 </template>
 
 <script lang="ts">
@@ -73,6 +73,7 @@ export default defineComponent({
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow) var(--color-shadow);
   display: block;
+  padding: 0;
 }
 
 .list-item-cardtype {
