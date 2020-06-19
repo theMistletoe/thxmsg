@@ -24,15 +24,16 @@
       </section>
     </div>
     <hr />
-    <header><h2>How to use</h2></header>
-
-    <ol>
-      <li>新しいワークスペースを作成する</li>
-      <li>ワークスペースのURL、またはIDを参加者に連携する</li>
-      <li>参加者各々、感謝のカードタイプを選んで、メッセージを送信する</li>
-      <li>出てきたカードを眺めながら、チームで労いの言葉を掛け合う</li>
-      <li>ポジティブな気分でスプリントを終える</li>
-    </ol>
+    <div class="container">
+      <header><h2>How to use</h2></header>
+      <ol>
+        <li>新しいワークスペースを作成する</li>
+        <li>ワークスペースのURL、またはIDを参加者に連携する</li>
+        <li>参加者各々、感謝のカードタイプを選んで、メッセージを送信する</li>
+        <li>出てきたカードを眺めながら、チームで労いの言葉を掛け合う</li>
+        <li>ポジティブな気分でスプリントを終える</li>
+      </ol>
+    </div>
   </main>
 </template>
 
@@ -59,5 +60,10 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.container {
+  margin-left: 4em;
+  margin-right: 4em;
 }
 </style>
