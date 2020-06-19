@@ -74,6 +74,7 @@ export default defineComponent({
   box-shadow: var(--box-shadow) var(--color-shadow);
   display: block;
   padding: 0;
+  margin: 1em;
 }
 
 .list-item-cardtype {
