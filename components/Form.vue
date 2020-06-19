@@ -16,15 +16,19 @@
       </div>
       <div class="form-from">
         <label>From</label>
-        <input type="text" v-model="state.from" />
+        <input type="text" v-model="state.from" placeholder="例）たかし" />
       </div>
       <div class="form-msg">
         <label>Write Message for Thanks!</label>
-        <textarea type="textarea" v-model="state.msg" />
+        <textarea
+          type="textarea"
+          v-model="state.msg"
+          placeholder="例）いつも助けてくれてありがとう！"
+        />
       </div>
       <div class="form-to">
         <label>To</label>
-        <input type="text" v-model="state.to" />
+        <input type="text" v-model="state.to" placeholder="例）ひろみ" />
       </div>
       <button type="submit">Send</button>
     </form>
