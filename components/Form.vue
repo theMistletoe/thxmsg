@@ -39,6 +39,7 @@
 import { defineComponent, SetupContext, reactive } from "@vue/composition-api";
 import { ThanksMsg } from "@/interfaces/ThanksMsg";
 import { CardType } from "../interfaces/CardType";
+import shortid from "shortid";
 
 type Props = {};
 
@@ -54,6 +55,7 @@ export default defineComponent({
     const addThanksMsg = () => {
       const now = new Date();
       const newThanksMsg: ThanksMsg = {
+        id: shortid.generate(),
         to: state.to,
         msg: state.msg,
         from: state.from,

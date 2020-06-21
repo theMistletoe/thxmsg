@@ -1,8 +1,8 @@
 <template>
   <transition-group tag="ul" class="list">
     <ListItem
-      v-for="(thanksMsg, index) in thanksMsgs"
-      v-bind:key="index"
+      v-for="thanksMsg in thanksMsgs"
+      v-bind:key="thanksMsg.id"
       :thanksMsg="thanksMsg"
     />
   </transition-group>
