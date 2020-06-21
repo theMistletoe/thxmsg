@@ -1,9 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <header>
-        <h1>このページは？</h1>
-      </header>
+      <h1>このページは？</h1>
       <article>
         このページはアジャイルレトロスペクティブで紹介されている<br />
         「感謝」というふりかえり手法をオンラインで行うためのWebサービスです！
@@ -11,14 +9,14 @@
     </div>
 
     <div class="container">
-      <header>
-        <h1>感謝とは?</h1>
-      </header>
+      <h1>感謝とは?</h1>
       <article>
         振り返り手法の一つ。<br />
         チームメンバーがお互いに感謝の思いを伝え合うことで、<br />
         ポジティブにスプリントやふりかえりを終えられる効果があります！<br />
-        節目のタイミングや、チームが暗い雰囲気の際にチームを明るくできる効果があります！
+        節目のタイミングや、チームが暗い雰囲気の際にチームを明るくできる効果があります！<br />
+        Management3.0で紹介されている「Kudoカード」では、カードに感謝の思いを書き、<br />
+        張り出したり、手渡しすることで感謝のふりかえりを行います。
       </article>
       <p>
         参考：
@@ -26,6 +24,10 @@
           <li>
             <i><a href="https://www.amazon.co.jp/dp/B01IGW59NQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1">
             『アジャイルレトロスペクティブズ　強いチームを育てる「ふりかえり」の手引き』(EstherDerby, DianaLarsen他)</a></i>
+          </li>
+          <li>
+            <i><a href="https://management30.com/practice/kudo-cards/">
+            Kudo Cards</a></i>
           </li>
           <li>
             <i><a href="http://management30.jp/2019/07/09/management30-action-marietta/">
@@ -43,10 +45,14 @@
 .container {
   margin-left: 4em;
   margin-right: 4em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 article {
+  text-align: center;
+}
+
+h1 {
   text-align: center;
 }
 </style>
