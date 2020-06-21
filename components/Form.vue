@@ -53,6 +53,11 @@ export default defineComponent({
     });
 
     const addThanksMsg = () => {
+      if (state.to === "" || state.msg === "" || state.from === "") {
+        alert("入力項目は全て必須です！");
+        return;
+      }
+
       const now = new Date();
       const newThanksMsg: ThanksMsg = {
         id: shortid.generate(),
