@@ -6,8 +6,7 @@
       </header>
       <article>
         このページはアジャイルレトロスペクティブで紹介されている<br />
-        「感謝」というふりかえり手法をオンラインで行うための<br />
-        Webアプリです！
+        「感謝」というふりかえり手法をオンラインで行うためのWebサービスです！
       </article>
     </div>
 
@@ -20,20 +19,20 @@
         チームメンバーがお互いに感謝の思いを伝え合うことで、<br />
         ポジティブにスプリントやふりかえりを終えられる効果があります！<br />
         節目のタイミングや、チームが暗い雰囲気の際にチームを明るくできる効果があります！
-        <p>
-          参考：
-          <ul>
-            <li>
-              <i><a href="https://www.amazon.co.jp/dp/B01IGW59NQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1">
-              『アジャイルレトロスペクティブズ　強いチームを育てる「ふりかえり」の手引き』(EstherDerby, DianaLarsen他)</a></i>
-            </li>
-            <li>
-              <i><a href="http://management30.jp/2019/07/09/management30-action-marietta/">
-              『【やってみた】いい規模の会社で導入してみた結果・・・』</a></i>
-            </li>
-          </ul>
-        </p>
       </article>
+      <p>
+        参考：
+        <ul>
+          <li>
+            <i><a href="https://www.amazon.co.jp/dp/B01IGW59NQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1">
+            『アジャイルレトロスペクティブズ　強いチームを育てる「ふりかえり」の手引き』(EstherDerby, DianaLarsen他)</a></i>
+          </li>
+          <li>
+            <i><a href="http://management30.jp/2019/07/09/management30-action-marietta/">
+            『【やってみた】いい規模の会社で導入してみた結果・・・』</a></i>
+          </li>
+        </ul>
+      </p>
     </div>
   </main>
 </template>
@@ -44,5 +43,10 @@
 .container {
   margin-left: 4em;
   margin-right: 4em;
+  margin-bottom: 2em;
+}
+
+article {
+  text-align: center;
 }
 </style>
