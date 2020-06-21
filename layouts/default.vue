@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <nuxt />
     <footer>
       @2020 <a href="https://github.com/theMistletoe">theMistletoe</a> All Right
@@ -7,6 +8,16 @@
     </footer>
   </div>
 </template>
+
+<script>
+import Header from "~/components/Header";
+
+export default {
+  components: {
+    Header
+  }
+};
+</script>
 
 <style>
 html {
