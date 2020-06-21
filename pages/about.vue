@@ -27,7 +27,7 @@
           </li>
           <li>
             <i><a href="https://management30.com/practice/kudo-cards/">
-            Kudo Cards</a></i>
+            『Kudo Cards』(Management3.0)</a></i>
           </li>
           <li>
             <i><a href="http://management30.jp/2019/07/09/management30-action-marietta/">
