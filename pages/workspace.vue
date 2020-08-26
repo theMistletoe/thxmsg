@@ -7,6 +7,7 @@
     <hr />
     <header><h2>感謝の言葉たち</h2></header>
     <List :thanksMsgs="thanksMsgs" />
+    <button type="button" @click="capturecanvas">Capture Screen!</button>
   </main>
 </template>
 
@@ -15,6 +16,7 @@ import List from "~/components/List.vue";
 import Form from "~/components/Form.vue";
 import WorkspaceID from "~/components/WorkspaceID.vue";
 import firebase from "~/firebase";
+import html2canvas from "html2canvas";
 
 export default {
   components: {
@@ -65,6 +67,12 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+    },
+    capturecanvas: function() {
+      html2canvas(document.body).then(function(canvas) {
+        var imgData = canvas.toDataURL();
+        window.open().document.write('<img src="' + imgData + '" />');
+      });
     }
   }
 };
