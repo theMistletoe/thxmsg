@@ -1,11 +1,15 @@
 <template>
-  <transition-group tag="ul" class="list">
-    <ListItem
-      v-for="thanksMsg in thanksMsgs"
-      v-bind:key="thanksMsg.id"
-      :thanksMsg="thanksMsg"
-    />
-  </transition-group>
+  <div>
+    <transition-group tag="ul" class="list">
+      <ListItem
+        v-if="thanksMsgs.length !== 0"
+        v-for="thanksMsg in thanksMsgs"
+        v-bind:key="thanksMsg.id"
+        :thanksMsg="thanksMsg"
+      />
+    </transition-group>
+    <p v-if="thanksMsgs.length === 0">まだ感謝の言葉は書き込むれていません… 最初の感謝を書き込もう！</p>
+  </div>
 </template>
 
 <script lang="ts">
