@@ -7,7 +7,7 @@
     <hr />
     <header><h2>感謝の言葉たち</h2></header>
     <List :thanksMsgs="thanksMsgs" />
-    <button type="button" @click="capturecanvas">Capture Screen!</button>
+    <button type="button" @click="capturecanvas">スクリーンショットを取る</button>
   </main>
 </template>
 

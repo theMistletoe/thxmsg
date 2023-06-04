@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>WorkspaceID:{{ workspaceID }}</h2>
-    <a type="button" @click="onCopy">Copy URL!</a>
+    <a type="button" @click="onCopy">ワークスペースのURLをコピー</a>
   </div>
 </template>
 

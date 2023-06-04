@@ -30,7 +30,7 @@
         <label>To</label>
         <input type="text" v-model="state.to" placeholder="例）ひろみ" />
       </div>
-      <button type="submit">Send</button>
+      <button type="submit">送信</button>
     </form>
   </div>
 </template>

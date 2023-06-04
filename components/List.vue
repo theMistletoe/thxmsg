@@ -8,7 +8,7 @@
         :thanksMsg="thanksMsg"
       />
     </transition-group>
-    <p v-if="thanksMsgs.length === 0">まだ感謝の言葉は書き込むれていません… 最初の感謝を書き込もう！</p>
+    <p v-if="thanksMsgs.length === 0">まだ感謝の言葉は書き込まれていません… 最初の感謝を書き込もう！</p>
   </div>
 </template>
 
