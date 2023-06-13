@@ -8,6 +8,14 @@
     <header><h2>感謝の言葉たち</h2></header>
     <List :thanksMsgs="thanksMsgs" />
     <button type="button" @click="capturecanvas">スクリーンショットを取る</button>
+    <hr />
+    <article>
+      <aside>
+        <p>※使用後はデータをクリアすることができます。</p>
+        <p>※クリアすると感謝の言葉を復元することは出来ません。<br />クリアする前にスクリーンショットを取得して保存しておくことをおすすめします。</p>
+        <a @click="clearThanksMsg" color="red"><i>※注意 すべての感謝の言葉をクリアする</i></a>
+      </aside>
+    </article>
   </main>
 </template>
 
@@ -33,7 +41,8 @@ export default {
 
     const db = firebase.firestore();
 
-    let fetchedThanksMsgs = [];
+    const fetchedThanksMsgs = [];
+    const fetchedDeleteDocIds = [];
     db.collection("workspaces")
       .doc(this.$route.query.workspaceID)
       .collection("thanksMsgs")
@@ -42,14 +51,17 @@ export default {
         fetchedThanksMsgs = [];
         querySnapshot.forEach(doc => {
           console.log(doc.data());
+          fetchedDeleteDocIds.push(doc.id);
           fetchedThanksMsgs.push(doc.data());
         });
         this.thanksMsgs = fetchedThanksMsgs;
+        this.deleteDocIds = fetchedDeleteDocIds;
       });
   },
   data() {
     return {
-      thanksMsgs: []
+      thanksMsgs: [],
+      deleteDocIds: []
     };
   },
   methods: {
@@ -73,6 +85,26 @@ export default {
         var imgData = canvas.toDataURL();
         window.open().document.write('<img src="' + imgData + '" />');
       });
+    },
+    clearThanksMsg: function() {
+      const isAbleToDelete = window.confirm('すべての感謝の言葉を削除してよろしいですか？(削除すると復元出来ません)');
+      if (isAbleToDelete) {
+        const db = firebase.firestore();
+
+        console.log(this.deleteDocIds);
+        this.deleteDocIds.forEach((docId) => {
+          db.collection("workspaces")
+            .doc(this.$route.query.workspaceID)
+            .collection("thanksMsgs").doc(docId)
+            .delete()
+              .then(() => {
+                console.log("Document successfully deleted!");
+              })
+              .catch((error) => {
+                console.error("Error removing document: ", error);
+              });
+        })
+      }
     }
   }
 };
