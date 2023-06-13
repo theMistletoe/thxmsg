@@ -41,7 +41,7 @@ export default {
 
     const db = firebase.firestore();
 
-    const fetchedThanksMsgs = [];
+    let fetchedThanksMsgs = [];
     const fetchedDeleteDocIds = [];
     db.collection("workspaces")
       .doc(this.$route.query.workspaceID)
