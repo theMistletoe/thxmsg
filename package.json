@@ -32,8 +32,8 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@types/jest": "^25.2.3",
     "@vue/composition-api": "^0.5.0",
+    "dom-to-image": "^2.6.0",
     "firebase": "^7.14.2",
-    "html2canvas": "^1.0.0-rc.7",
     "nuxt": "^2.0.0",
     "nuxt-clipboard2": "^0.2.1",
     "shortid": "^2.2.15"

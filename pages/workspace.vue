@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main class="page" id="thanks-list-page">
     <header>
       <WorkspaceID :workspaceID="$route.query.workspaceID" />
     </header>
@@ -24,7 +24,7 @@ import List from "~/components/List.vue";
 import Form from "~/components/Form.vue";
 import WorkspaceID from "~/components/WorkspaceID.vue";
 import firebase from "~/firebase";
-import html2canvas from "html2canvas";
+import domtoimage from 'dom-to-image';
 
 export default {
   components: {
@@ -81,10 +81,17 @@ export default {
         });
     },
     capturecanvas: function() {
-      html2canvas(document.body).then(function(canvas) {
-        var imgData = canvas.toDataURL();
-        window.open().document.write('<img src="' + imgData + '" />');
-      });
+      const node = document.getElementById('thanks-list-page');
+      domtoimage.toPng(node)
+        .then(function (dataUrl) {
+          const img = new Image();
+          img.src = dataUrl;
+          window.open().document.body.appendChild(img);
+        })
+        .catch(function (error) {
+          console.error('oops, something went wrong!', error);
+          window.alert.error('oops, something went wrong!');
+        });
     },
     clearThanksMsg: function() {
       const isAbleToDelete = window.confirm('すべての感謝の言葉を削除してよろしいですか？(削除すると復元出来ません)');
