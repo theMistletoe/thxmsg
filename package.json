@@ -36,7 +36,7 @@
     "@types/jest": "^25.2.3",
     "@vue/composition-api": "^0.6.7",
     "dom-to-image": "^2.6.0",
-    "firebase": "^7.14.2",
+    "firebase": "^7.24.0",
     "nuxt": "^3.0.0",
     "nuxt-clipboard2": "^0.2.1",
     "shortid": "^2.2.16",
