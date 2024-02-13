@@ -1956,10 +1956,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/merge-streams/-/merge-streams-2.1.0.tgz#7f3ce7385d483e673b6fe81c8700fc9604e8df30"
   integrity sha512-g3/sYJWXTAf3Ce861z4/mW9jDxN7hoNHZMEyhd3Zh7GKQPiovWNttzhRW2BeGPwPxPpLDKumL6Sg056VAMjdkg==
 
-"@snyk/protect@^1.1278.0":
-  version "1.1278.0"
-  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1278.0.tgz#6b8f24dd009b9e9907538f964089445207099117"
-  integrity sha512-HIbY+ZclFyqGWznsG5zy0DkyIVFtKNVdAbS989snkzcmYi3FDioU6VYC+DN/BnGlspuE9WkYqtLUkO5gO4VmhA==
+"@snyk/protect@latest":
+  version "1.1279.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1279.0.tgz#a82a3da90d8cfc8547488b1654baeeca2435a75d"
+  integrity sha512-JviCIGYgPSrEAhaGyOTs1p2Guqe12LvjHgw4vbkDJtRCSkLX92h7CVnKhZIUoz3gOqTfDBDuW9uebhpk5OSVZg==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
@@ -8398,10 +8398,10 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shortid@^2.2.15:
-  version "2.2.15"
-  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
-  integrity sha512-5EaCy2mx2Jgc/Fdn9uuDuNIIfWBpzY4XIlhoqtXF6qsf+/+SGZ+FxDdX/ZsMZiWupIWNqAEmiNY4RC+LSmCeOw==
+shortid@^2.2.16:
+  version "2.2.16"
+  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.16.tgz#b742b8f0cb96406fd391c76bfc18a67a57fe5608"
+  integrity sha512-Ugt+GIZqvGXCIItnsL+lvFJOiN7RYqlGy7QE41O3YC1xbNSeDGIRO7xg2JJXIAj1cAGnOeC1r7/T9pgrtQbv4g==
   dependencies:
     nanoid "^2.1.0"
 
